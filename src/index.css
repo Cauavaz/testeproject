@@ -99,5 +99,46 @@ body {
 @media (max-width: 768px) {
   .hero-panel {
     border-radius: 14px;
+    padding: clamp(12px, 3vw, 18px) clamp(14px, 3.5vw, 22px);
+  }
+  
+  .hero-tag {
+    font-size: 0.72rem;
+    padding: 5px 10px;
+    margin-bottom: 6px;
+  }
+  
+  .page h1 {
+    font-size: clamp(1.1rem, 4vw + 0.8rem, 1.5rem);
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(0.82rem, 2.5vw + 0.7rem, 0.94rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: clamp(12px, 3vw, 20px);
+    gap: clamp(10px, 2.5vw, 16px);
+  }
+  
+  .hero-panel {
+    padding: clamp(10px, 4vw, 16px) clamp(12px, 4.5vw, 20px);
+    border-radius: 12px;
+  }
+  
+  .hero-tag {
+    font-size: 0.68rem;
+    padding: 4px 9px;
+    margin-bottom: 5px;
+  }
+  
+  .page h1 {
+    font-size: clamp(0.95rem, 5vw + 0.6rem, 1.3rem);
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(0.76rem, 3vw + 0.65rem, 0.88rem);
   }
 }

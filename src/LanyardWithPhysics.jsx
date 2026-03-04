@@ -18,23 +18,69 @@ import BadgeDesign from './BadgeDesign';
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 function CardWithTextures({ isMobile }) {
-  const backTexture = useLoader(THREE.TextureLoader, '/index.png');
+  const qrTexture = useLoader(THREE.TextureLoader, '/qrcodeindex.svg');
 
   return (
     <>
       {/* Front - Professional Badge Design */}
       <BadgeDesign isMobile={isMobile} />
-      <mesh position={[0, 0, -0.011]} rotation={[0, Math.PI, 0]}>
-        <planeGeometry args={[0.8, 1.2]} />
-        <meshPhysicalMaterial
-          map={backTexture}
-          map-repeat={[0.8, 0.8]}
-          clearcoat={isMobile ? 0 : 1}
-          clearcoatRoughness={0.15}
-          roughness={0.3}
-          metalness={0.5}
-        />
-      </mesh>
+      <group position={[0, 0, -0.011]} rotation={[0, Math.PI, 0]}>
+        <mesh>
+          <planeGeometry args={[0.8, 1.2]} />
+          <meshPhysicalMaterial
+            color="#f8fbff"
+            clearcoat={isMobile ? 0 : 0.95}
+            clearcoatRoughness={0.14}
+            roughness={0.12}
+            metalness={0.08}
+          />
+        </mesh>
+
+        <mesh position={[0, 0.44, 0.002]}>
+          <planeGeometry args={[0.8, 0.24]} />
+          <meshStandardMaterial color="#1d3e72" />
+        </mesh>
+
+        <mesh position={[0, 0.44, 0.003]}>
+          <planeGeometry args={[0.62, 0.04]} />
+          <meshStandardMaterial color="#7cd8ff" />
+        </mesh>
+
+        <mesh position={[0, 0.1, 0.002]}>
+          <planeGeometry args={[0.62, 0.62]} />
+          <meshPhysicalMaterial color="#ffffff" roughness={0.08} metalness={0.04} />
+        </mesh>
+
+        <mesh position={[0, 0.1, 0.003]}>
+          <planeGeometry args={[0.54, 0.54]} />
+          <meshStandardMaterial map={qrTexture} transparent />
+        </mesh>
+
+        <mesh position={[-0.31, 0.41, 0.003]}>
+          <planeGeometry args={[0.06, 0.06]} />
+          <meshStandardMaterial color="#7cd8ff" />
+        </mesh>
+
+        <mesh position={[0.31, 0.41, 0.003]}>
+          <planeGeometry args={[0.06, 0.06]} />
+          <meshStandardMaterial color="#7cd8ff" />
+        </mesh>
+
+        <mesh position={[0, -0.34, 0.002]}>
+          <planeGeometry args={[0.68, 0.22]} />
+          <meshStandardMaterial color="#132b53" />
+        </mesh>
+
+        <mesh position={[0, -0.34, 0.003]}>
+          <planeGeometry args={[0.52, 0.03]} />
+          <meshStandardMaterial color="#f2994a" />
+        </mesh>
+
+        <mesh position={[0, -0.46, 0.002]}>
+          <planeGeometry args={[0.8, 0.12]} />
+          <meshStandardMaterial color="#0f2345" />
+        </mesh>
+      </group>
       <mesh>
         <boxGeometry args={[1.6, 2.25, 0.02]} />
         <meshPhysicalMaterial

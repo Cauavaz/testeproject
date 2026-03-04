@@ -21,3 +21,17 @@
     border-radius: 18px;
   }
 }
+
+@media (max-width: 480px) {
+  .lanyard-wrapper {
+    height: 62vh;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .lanyard-wrapper {
+    height: 58vh;
+    border-radius: 14px;
+  }
+}
