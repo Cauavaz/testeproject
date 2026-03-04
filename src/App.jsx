@@ -3,7 +3,7 @@ import LanyardWithPhysics from './LanyardWithPhysics';
 
 export default function App() {
   const handleRedirect = () => {
-    window.location.href = '../main-page/index.html';
+    window.location.href = 'https://desafiofrontresponsive.netlify.app/';
   };
 
   return (
