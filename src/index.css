@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -11,24 +13,91 @@ body,
 }
 
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: radial-gradient(circle at top, #1d1d30 0%, #0f1222 100%);
-  color: #f2f3f7;
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(45, 122, 255, 0.18), transparent 38%),
+    radial-gradient(circle at 88% 0%, rgba(19, 196, 173, 0.12), transparent 32%),
+    linear-gradient(180deg, #0a1124 0%, #090e1b 100%);
+  color: #eaf2ff;
 }
 
 .page {
   min-height: 100vh;
-  padding: 24px;
+  padding: clamp(16px, 2vw, 28px);
   display: grid;
-  gap: 12px;
+  gap: clamp(12px, 1.6vw, 18px);
+}
+
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(14px, 2vw, 22px) clamp(16px, 2.4vw, 26px);
+  border-radius: 18px;
+  border: 1px solid rgba(126, 202, 255, 0.35);
+  background: linear-gradient(120deg, rgba(26, 42, 83, 0.78), rgba(14, 29, 68, 0.54));
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  animation: panel-entrance 520ms ease-out both;
+}
+
+.hero-panel::after {
+  content: '';
+  position: absolute;
+  inset: auto -40px -40px auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 242, 228, 0.24), transparent 70%);
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #def9ff;
+  background: linear-gradient(90deg, rgba(65, 158, 255, 0.36), rgba(41, 203, 179, 0.25));
 }
 
 .page h1 {
   margin: 0;
-  font-size: clamp(1.2rem, 1.5vw + 1rem, 2rem);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.35rem, 1.7vw + 1rem, 2.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #f3f8ff;
 }
 
-.page p {
+.hero-subtitle {
   margin: 0;
-  opacity: 0.8;
+  max-width: 70ch;
+  font-size: clamp(0.9rem, 0.7vw + 0.76rem, 1.02rem);
+  line-height: 1.65;
+  color: rgba(226, 238, 255, 0.92);
+}
+
+.hero-subtitle strong {
+  color: #7cf2e4;
+}
+
+@keyframes panel-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-panel {
+    border-radius: 14px;
+  }
 }

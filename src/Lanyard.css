@@ -8,8 +8,11 @@
   align-items: center;
   border-radius: 24px;
   overflow: hidden;
-  background: radial-gradient(circle at top, rgba(156, 131, 197, 0.18), rgba(20, 20, 36, 0.85));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at 50% -10%, rgba(67, 144, 255, 0.22), transparent 45%),
+    radial-gradient(circle at 8% 90%, rgba(30, 206, 181, 0.1), transparent 40%),
+    linear-gradient(145deg, rgba(14, 26, 54, 0.88), rgba(10, 16, 35, 0.94));
+  border: 1px solid rgba(181, 221, 255, 0.18);
 }
 
 @media (max-width: 768px) {

@@ -217,8 +217,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }) {
               setDragStartY(card.current.translation().y);
             }}
             onDoubleClick={() => {
-              console.log('Double click detected! Redirecting...');
-              window.open('file:///C:/PROJETO%20INDEX%20SEGUNDA%20ETAPA/index.html', '_self');
+              window.location.href = 'https://desafiofrontresponsive.netlify.app/';
             }}
           >
             <CardWithTextures isMobile={isMobile} />
